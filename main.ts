@@ -1,3 +1,33 @@
+function dizzy () {
+    basic.showLeds(`
+        # . . # .
+        # # . # #
+        . . . . .
+        . # # # .
+        # . . . #
+        `)
+    basic.showLeds(`
+        # # . # #
+        # . . # .
+        . . . . .
+        . # # # .
+        # . . . #
+        `)
+    basic.showLeds(`
+        # # . # #
+        . # . . #
+        . . . . .
+        . # # # .
+        # . . . #
+        `)
+    basic.showLeds(`
+        . # . . #
+        # # . # #
+        . . . . .
+        . # # # .
+        # . . . #
+        `)
+}
 basic.showIcon(IconNames.Happy)
 basic.forever(function () {
     if (input.acceleration(Dimension.X) < 500 && input.acceleration(Dimension.X) > -500) {
@@ -6,14 +36,14 @@ basic.forever(function () {
     if (input.acceleration(Dimension.X) > 500 || input.acceleration(Dimension.X) < -500) {
         if (input.acceleration(Dimension.Y) > 500 || input.acceleration(Dimension.Y) < -500) {
             for (let index = 0; index < 2; index++) {
-            	
+                dizzy()
             }
             basic.showLeds(`
+                # # . # #
+                # # . # #
                 . . . . .
-                . . . . .
-                . . . . .
-                . . . . .
-                . . . . .
+                . # # # .
+                # . . . #
                 `)
             basic.pause(500)
         }
